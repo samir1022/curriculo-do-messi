@@ -1,64 +1,309 @@
+
+/* ==============================
+   1. CONFIGURAÇÕES GERAIS
+================================= */
+
+:root {
+    --verde-escuro: #173D32;
+    --verde-destaque: #287653;
+    --fundo: #F3F5F4;
+    --branco: #FFFFFF;
+    --texto: #303936;
+    --texto-secundario: #65716B;
+    --borda: #DCE4DF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto);
+    line-height: 1.7;
+    padding: 32px 16px;
+}
+
+/* ==============================
+   2. ESTRUTURA DO CURRÍCULO
+================================= */
+
+.curriculo {
+    display: grid;
+    grid-template-columns: 290px minmax(0, 1fr);
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: var(--branco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(23, 61, 50, 0.10);
+}
+
+/* ==============================
+   3. COLUNA LATERAL
+================================= */
+
 .lateral {
-    width: 30%;
-    padding: 30px;
-    background-color: #37881f;
-    color: white;
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    padding: 36px 26px;
+}
+
+.foto {
     text-align: center;
+    margin-bottom: 22px;
 }
 
 .foto img {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 20px;
-    background-color: rgb(255, 255, 255);
-    color: #1f8860;
+    display: block;
+    width: 140px;
+    height: 140px;
+    max-width: 100%;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center;
     border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+}
+
+.identificacao {
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.identificacao h1 {
+    font-size: 25px;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.cargo {
+    color: #D5E9DD;
+    font-size: 15px;
+}
+
+/* ==============================
+   4. CONTATO
+================================= */
+
+.contato {
+    margin-top: 36px;
+}
+
+.contato h2 {
+    font-size: 18px;
+    margin-bottom: 18px;
+    padding-bottom: 9px;
+    border-bottom: 2px solid #75A98A;
+}
+
+.contato p {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.rotulo {
+    color: #B8D8C4;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.contato a {
+    color: var(--branco);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.contato a:hover {
+    text-decoration: underline;
+}
+
+/* ==============================
+   5. CONTEÚDO PRINCIPAL
+================================= */
+
+.conteudo {
+    min-width: 0;
+    padding: 42px 38px;
+}
+
+.secao {
+    margin-bottom: 32px;
+}
+
+.secao:last-child {
+    margin-bottom: 0;
+}
+
+.secao h2 {
+    color: var(--verde-escuro);
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 18px;
+    padding-bottom: 9px;
+    border-bottom: 2px solid var(--verde-destaque);
+}
+
+.secao p {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* ==============================
+   6. FORMAÇÃO E ATUAÇÃO
+================================= */
+
+.item {
+    position: relative;
+    margin-bottom: 24px;
+    padding-left: 16px;
+    border-left: 3px solid var(--borda);
+}
+
+.item:last-child {
+    margin-bottom: 0;
+}
+
+.item h3 {
+    color: var(--verde-escuro);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.instituicao {
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+.periodo {
+    display: inline-block;
+    margin-top: 5px;
+    color: var(--verde-destaque);
+    font-size: 13px;
     font-weight: bold;
 }
 
-.lateral h2 {
-    margin: 30px 0 15px;
-    font-size: 18px;
-    border-bottom: 1px solid white;
-    padding-bottom: 8px;
+/* ==============================
+   7. HABILIDADES
+================================= */
+
+.lista-habilidades {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
 }
 
-.curriculo {
-    display: flex;
+.lista-habilidades li {
+    position: relative;
+    padding: 10px 10px 10px 26px;
+    background-color: var(--fundo);
+    border-radius: 6px;
+    font-size: 13px;
+    overflow-wrap: anywhere;
 }
 
-.conteudo {
-    width: 70%;
-    padding: 40px;
+.lista-habilidades li::before {
+    content: "✓";
+    position: absolute;
+    left: 9px;
+    top: 9px;
+    color: var(--verde-destaque);
+    font-weight: bold;
 }
- .conteudo h2 {
-    color: #1f8839;
-    border-bottom: 2px solid #1f8868;
-    padding-bottom: 8px;
-    margin-bottom: 15px;
- }
-.conteudo section { 
-    margin-bottom: 30px;
-}
-.item {
-    margin-bottom: 25px;
-}
-.item span {
-    color: #777777;
-    font-size: 14px;
-}
-/* RESPONIVIDADE */
-@media (max-widht: 700px){
+
+/* ==============================
+   8. RESPONSIVIDADE
+================================= */
+
+@media (max-width: 760px) {
+    body {
+        padding: 16px 10px;
+    }
+
     .curriculo {
-        flex-direction: column;
-    }
-    .lateral,
-    .conteudo{
-        width: 100%;
+        grid-template-columns: 1fr;
+        border-radius: 8px;
     }
 
+    .lateral {
+        padding: 30px 24px;
+    }
+
+    .contato {
+        max-width: 420px;
+        margin: 28px auto 0;
+        text-align: left;
+    }
+
+    .conteudo {
+        padding: 30px 24px;
+    }
+
+    .lista-habilidades {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==============================
+   9. IMPRESSÃO
+================================= */
+
+@media print {
+    @page {
+        size: A4;
+        margin: 10mm;
+    }
+
+    body {
+        padding: 0;
+        background-color: #FFFFFF;
+        font-size: 10pt;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .curriculo {
+        max-width: none;
+        grid-template-columns: 30% minmax(0, 1fr);
+        border-radius: 0;
+        box-shadow: none;
+        overflow: visible;
+    }
+
+    .lateral {
+        padding: 22px 16px;
+    }
+
+    .conteudo {
+        padding: 24px 20px;
+    }
+
+    .foto img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .secao,
+    .item {
+        break-inside: avoid;
+    }
+
+    .contato a {
+        text-decoration: none;
+    }
 }
